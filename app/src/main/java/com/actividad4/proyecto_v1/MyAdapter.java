@@ -24,12 +24,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 .inflate(R.layout.item_layout, parent, false);
         return new MyViewHolder(itemView);
     }
+    public void eliminarItem(int position) {
+        items.remove(position);
+        notifyItemRemoved(position);
+    }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Item item = items.get(position);
         holder.deleteButton.setOnClickListener(view -> {
-            // Manejar clic en botón Borrar
+            int positionActual = holder.getAdapterPosition();
+            if (positionActual != RecyclerView.NO_POSITION) {
+                eliminarItem(positionActual);
+            }
         });
 
         holder.openButton.setOnClickListener(view -> {

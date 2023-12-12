@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">proyecto_v1</string>
+    <string-array name="opcionuno_spinner">
+        <item>TRABAJO</item>
+        <item>CASA</item>
+        <item>NEGOCIO</item>
+    </string-array>
+    <string-array name="opciondos_spinner">
+        <item>PENDIENTE</item>
+        <item>COMPLETADA</item>
+    </string-array>
 </resources>
